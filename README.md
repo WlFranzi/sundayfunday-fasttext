@@ -18,7 +18,3 @@ Kafka feat IBM Watson
 	⁃	German example:
 	⁃	froh zu sein bedarf es wenig und wer froh ist ist ein koenig
 	⁃	__label__Joy 0.419923 __label__Analytical 0.18635 __label__Confident 0.14924 __label__Sadness 0.105466 __label__Tentative 0.094536
-	⁃	English example:
-	⁃	It takes little to be happy and whoever is happy is a king.
-	⁃	__label__Sadness 0.762551 __label__Analytical 0.0745663 __label__Joy 0.069375 __label__Confident 0.0426352 __label__Tentative 0.0307922
-		—> clearly, even fasttext knows: Germans have more fun. lol
