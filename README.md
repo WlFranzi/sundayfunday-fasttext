@@ -4,7 +4,7 @@
 
 ``` 
 
-As an example, my model gave me my top emotions for my German sentences:
+As an example, I got the top emotions for my German sentence:
 
 "froh zu sein bedarf es wenig und wer froh ist ist ein Koenig"
 
