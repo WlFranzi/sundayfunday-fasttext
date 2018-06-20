@@ -1,20 +1,38 @@
 Kafka feat IBM Watson
 
+I took 7 English books and their German translation and pinged Watson's tone analyzer API 
 
-	•	downloaded parallel corpora for the English and German books here: http://farkastranslations.com/bilingual_books.php
-	⁃	great data as each English sentence is exactly translated into a German sentence
-	•	took English sentence by sentence and pinged Watsons tone analyzer API(https://tone-analyzer-demo.ng.bluemix.net/). Find some python code her(https://bruceelgort.com/2016/06/07/using-ibm-watson-tone-analyzer-with-python/) This gave me up to 7 labels for my sentences: joy, fear, anger, sadness, analytical, confident, tentative
-	⁃	I just assumed that the corresponding German sentence have the same labels
-	•	Now, used Fasttext (speedy Gonzales classifier as its a hierarchical classifier) from Facebook AI research for text classification. Fasttext basically automates training, predicting and evaluation of your model. I trained a model on my German and one on my English data. 
-	•	the documentation is not verbose but describes in simple steps how to prep the data and train model on training set. https://github.com/facebookresearch/fastText 
-	⁃	testing e.g. for my repo: `$ ./fastText-master/fasttext test resources/english/model_englishbooks.bin resources/english/englishbooks.valid`
-	⁃	N	4673
-	⁃	P@1	0.671
-	⁃	R@1	0.406
-	⁃	Number of examples: 4673
-	⁃	not great, but hey.. without any single inch of preprocessing and tuning - not too bad.
-	⁃	predicting run: `$./fastText-master/fasttext predict-prob resources/german/model_german12books.bin - 5`
-	⁃	will enable you to type your sentences and receive a percentage prediction of first 5 labels
-	⁃	German example:
-	⁃	froh zu sein bedarf es wenig und wer froh ist ist ein koenig
-	⁃	__label__Joy 0.419923 __label__Analytical 0.18635 __label__Confident 0.14924 __label__Sadness 0.105466 __label__Tentative 0.094536
+As result, I got the top emotional predictions for my sentences:
+
+"froh zu sein bedarf es wenig und wer froh ist ist ein Koenig"
+
+--> Joy 0.419923, Analytical 0.18635, Confident 0.14924
+
+*which means, "to be happy takes little and who is happy is a king"*
+
+
+Steps to take to build your own model with fasttext:
+
+1. downloaded parallel corpora for the English and German books here: http://farkastranslations.com/bilingual_books.php
+
+this is great data set, as each English sentence is exactly translated into a German sentence
+
+
+2. take every english sentence and ping Watsons tone analyzer API(https://tone-analyzer-demo.ng.bluemix.net/). Here is a handy  python script for that (https://bruceelgort.com/2016/06/07/using-ibm-watson-tone-analyzer-with-python/) 
+
+This will give you up to 7 labels for each sentences: joy, fear, anger, sadness, analytical, confident, tentative. 
+
+Take the corresponding German sentence and apply the same emotion labels to it.
+
+3. used Fasttext (a hierarchical classifier) from Facebook AI research for text classification. Fasttext basically automates training, predicting and evaluation of your model. You can train a model on the German and one on the English books. Here the documentation: https://github.com/facebookresearch/fastText 
+
+for example my simply trained model gives me:
+`$ ./fastText-master/fasttext test resources/english/model_englishbooks.bin resources/english/englishbooks.valid`
+N	4673
+P@1	0.671
+R@1	0.406
+
+It is not great, but without any single inch of preprocessing and tuning it's not too bad.
+
+if you want to run a prediction, run: `$./fastText-master/fasttext predict-prob resources/german/model_german12books.bin - 5`
+this will open a dialog and you can type sentences and receive a percentage prediction for the first 5 labels
