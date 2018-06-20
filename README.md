@@ -2,7 +2,7 @@ Kafka feat IBM Watson
 
 ### I took 7 English books and their German translation and pinged Watson's tone analyzer API 
 
-As result, I got the top emotional predictions for my sentences:
+``` As an example result after training my models, I got the top emotional predictions for my sentences:
 
 "froh zu sein bedarf es wenig und wer froh ist ist ein Koenig"
 
@@ -10,6 +10,7 @@ As result, I got the top emotional predictions for my sentences:
 
 *which means, "to be happy takes little and who is happy is a king"*
 
+```
 
 Steps to take to build your own model with fasttext:
 
