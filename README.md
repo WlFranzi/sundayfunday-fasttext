@@ -1,4 +1,4 @@
-Kafka feat IBM Watson
+#### Kafka feat IBM Watson
 
 ### I took 7 English books and their German translation and pinged Watson's tone analyzer API 
 
@@ -21,7 +21,8 @@ Steps to take to build your own model with fasttext:
 this is great data set, as each English sentence is exactly translated into a German sentence
 
 
-2. take every english sentence and ping Watsons tone analyzer API(https://tone-analyzer-demo.ng.bluemix.net/). Here is a handy  python script for that (https://bruceelgort.com/2016/06/07/using-ibm-watson-tone-analyzer-with-python/) 
+2. take every english sentence and ping Watsons tone analyzer API(https://tone-analyzer-demo.ng.bluemix.net/). Watson tone analyzer works only on english text.
+Here is a handy  python script for that (https://bruceelgort.com/2016/06/07/using-ibm-watson-tone-analyzer-with-python/) 
 
 This will give you up to 7 labels for each sentences: joy, fear, anger, sadness, analytical, confident, tentative. 
 
