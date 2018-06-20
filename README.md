@@ -4,7 +4,7 @@
 
 ``` 
 
-As an example result after training my models, I got the top emotional predictions for my sentences:
+As an example, my model gave me my top emotions for my German sentences:
 
 "froh zu sein bedarf es wenig und wer froh ist ist ein Koenig"
 
@@ -40,3 +40,5 @@ It is not great, but without any single inch of preprocessing and tuning it's no
 
 if you want to run a prediction, run: `$./fastText-master/fasttext predict-prob resources/german/model_german12books.bin - 5`
 this will open a dialog and you can type sentences and receive a percentage prediction for the first 5 labels
+
+...I might use this work to further refine the predictions and apply it to literature to see how women and men's writing styles differ?
