@@ -1,6 +1,6 @@
 Kafka feat IBM Watson
 
-I took 7 English books and their German translation and pinged Watson's tone analyzer API 
+###I took 7 English books and their German translation and pinged Watson's tone analyzer API 
 
 As result, I got the top emotional predictions for my sentences:
 
