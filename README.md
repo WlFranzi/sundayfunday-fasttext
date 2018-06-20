@@ -10,7 +10,7 @@ As an example result after training my models, I got the top emotional predictio
 
 --> Joy 0.419923, Analytical 0.18635, Confident 0.14924
 
-*which means, "to be happy takes little and who is happy is a king"*
+(this means, "to be happy takes little and who is happy is a king")
 
 ```
 
